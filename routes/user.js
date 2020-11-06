@@ -63,16 +63,6 @@ router.post(
 		.withMessage("Please provide a username")
 		.isLength({ max: 32 })
 		.withMessage("Max username length is 32"),
-	check("firstName")
-		.exists({ checkFalsy: true })
-		.withMessage("Please provide a first name")
-		.isLength({ max: 64 })
-		.withMessage("Max firt name length is 64"),
-	check("lastName")
-		.exists({ checkFalsy: true })
-		.withMessage("Please provide a last name")
-		.isLength({ max: 64 })
-		.withMessage("Max last name length is 64"),
 	check("password")
 		.exists({ checkFalsy: true })
 		.withMessage("Please provide a password."),
@@ -88,23 +78,13 @@ router.post(
 			return true;
 		}),
 	asyncHandler(async (req, res, next) => {
-		const {
-			email,
-			username,
-			password,
-			firstName,
-			lastName,
-			phoneNum,
-		} = req.body;
+		const { email, username, password } = req.body;
 		const hashedPassword = await bcrypt.hash(password, 10);
 
 		const user = await User.create({
 			email,
 			username: username,
 			password: hashedPassword,
-			firstName,
-			lastName,
-			phoneNum,
 		});
 
 		const token = getUserToken(user);
