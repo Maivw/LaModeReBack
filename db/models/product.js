@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 			description: DataTypes.STRING,
 			availableSize: DataTypes.ARRAY(DataTypes.STRING),
 			photo: DataTypes.STRING,
+			smallerPhotos: DataTypes.ARRAY(DataTypes.STRING),
 			productListId: DataTypes.INTEGER,
 			volume: DataTypes.INTEGER,
 			promotion: DataTypes.STRING,

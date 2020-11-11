@@ -38,6 +38,10 @@ module.exports = {
 				type: Sequelize.STRING,
 				allowNull: false,
 			},
+			smallerPhotos: {
+				type: Sequelize.ARRAY(Sequelize.STRING),
+				allowNull: false,
+			},
 			productListId: {
 				allowNull: false,
 				type: Sequelize.INTEGER,
