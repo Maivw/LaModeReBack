@@ -22,18 +22,6 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.STRING,
 			},
-			firstName: {
-				allowNull: false,
-				type: Sequelize.STRING(64),
-			},
-			lastName: {
-				allowNull: false,
-				type: Sequelize.STRING(64),
-			},
-			phoneNum: {
-				type: Sequelize.STRING(10),
-				unique: true,
-			},
 			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE,
