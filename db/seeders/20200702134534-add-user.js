@@ -8,7 +8,6 @@ module.exports = {
 				username: "DemoUser",
 				password:
 					"$2a$10$HK/LmoLuyI0cikqNyYMST.sJesu8KyQrt.50D1sN9Bo6lpw6Nz.XK",
-
 				createdAt: new Date(),
 				updatedAt: new Date(),
 			},
